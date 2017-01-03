@@ -1,9 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    Drawing Turtles!
+    <style>
+    body {
+      background: #e8f0ff;
+    }
+    .controls{
+      border-radius: 5%;
+    }
+    #main {
+        width: 20%;
+        height: 75vh;
+        background: #bccae0;
+        border-radius: 5%;
+        float: left;
+    }
+    #canvas {
+        background: #e8f0ff;
+        margin-left: 20%;
+        height: 100vh;
+    }
+    #turtle {
+        background: black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+    }
+
+    .button{
+      border-radius: 5%;
+
+      position: relative;
+      left: 5%;
+      width: 90%;
+
+      height: 10%;
+
+    }
+    #up{
+        background: #c8a8d8;
+    }
+    </style>
+    <script>
+    //Script runs fine TODO fix the error that the top variable is undefined.. probably to do with the fact that you have it in percents.
+      var up = 10;
+      var side = 10;
+      var turtle = document.getElementById('turtle');
+      function up()
+      {
+        var top = turtle.style.offsetTop;
+        turtle.style.top = (top + up) + 'px';
+      }
+    </script>
   </head>
   <body>
-    <p>Body</p>
+    <div class="controls" id="main">Controls
+      <div class="button" id = "up" onClick="up()"></div>
+    </div>
+    <div id="canvas">Canvas
+      <div id="turtle"></div>
+    </div>
   </body>
 </html>

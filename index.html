@@ -1,0 +1,123 @@
+<!DOCTYPE html5>
+<html>
+  <head>
+    <style>
+    body {
+      background: #e8f0ff;
+    }
+    .controls{
+      border-radius: 5%;
+    }
+    #main {
+        width: 20%;
+        height: 75vh;
+        background: #bccae0;
+        border-radius: 5%;
+        float: left;
+    }
+    #canvas {
+        background: #e8f0ff;
+        margin-left: 20%;
+        height: 100vh;
+    }
+    #turtle {
+        background: black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+    }
+
+    .button{
+      border-radius: 5%;
+
+      position: relative;
+      left: 5%;
+      width: 90%;
+
+      height: 10%;
+
+    }
+    #up{
+      top: 5%;
+      background: #c8a8d8;
+    }
+
+    #down{
+      top: 5%;
+      background: #93f2a9;
+    }
+
+    #left{
+      top: 5%;
+      background: #f29b93;
+    }
+
+    #right{
+      top: 5%;
+      background: #f2eb93;
+    }
+    </style>
+    <script>
+    var move = 20;
+    var yOffset = 18;
+    document.getElementById("up").addEventListener('click', function(event){
+      document.getElementById("up").innerHTML = "hello";
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var top =  turtlePos.top;
+      turtle.style.top = (top - move - canvasY-yOffset) + "px";
+    });
+
+    document.getElementById("down").addEventListener('click', function(event){
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var top =  turtlePos.top;
+      turtle.style.top = (top + move - canvasY-yOffset) + "px";
+    });
+
+    document.getElementById("left").addEventListener('click', function(event){
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var left =  turtlePos.left;
+      turtle.style.left = (left - move - canvasX) + "px";
+    });
+
+    document.getElementById("right").addEventListener('click', function(event){
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var left =  turtlePos.left;
+      turtle.style.left = (left + move - canvasX) + "px";
+    });
+    </script>
+  </head>
+  <body>
+    <div class="controls" id="main">
+      <div class="button" id = "up">Up</div>
+      <div class="button" id = "down">Down</div>
+      <div class="button" id = "left">Left</div>
+      <div class="button" id = "right">Right</div>
+    </div>
+    <div id="canvas">Canvas
+      <div id="turtle"></div>
+    </div>
+  </body>
+</html>

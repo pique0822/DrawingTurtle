@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
   <head>
     <style>
@@ -41,24 +41,80 @@
 
     }
     #up{
-        background: #c8a8d8;
+      top: 5%;
+      background: #c8a8d8;
+    }
+
+    #down{
+      top: 5%;
+      background: #93f2a9;
+    }
+
+    #left{
+      top: 5%;
+      background: #f29b93;
+    }
+
+    #right{
+      top: 5%;
+      background: #f2eb93;
     }
     </style>
     <script>
-    //Script runs fine TODO fix the error that the top variable is undefined.. probably to do with the fact that you have it in percents.
-      var up = 10;
-      var side = 10;
-      var turtle = document.getElementById('turtle');
-      function up()
-      {
-        var top = turtle.style.offsetTop;
-        turtle.style.top = (top + up) + 'px';
-      }
+    var move = 20;
+    var yOffset = 18;
+    document.getElementById("up").addEventListener('click', function(event){
+      document.getElementById("up").innerHTML = "hello";
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var top =  turtlePos.top;
+      turtle.style.top = (top - move - canvasY-yOffset) + "px";
+    });
+
+    document.getElementById("down").addEventListener('click', function(event){
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var top =  turtlePos.top;
+      turtle.style.top = (top + move - canvasY-yOffset) + "px";
+    });
+
+    document.getElementById("left").addEventListener('click', function(event){
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var left =  turtlePos.left;
+      turtle.style.left = (left - move - canvasX) + "px";
+    });
+
+    document.getElementById("right").addEventListener('click', function(event){
+    	var turtle = document.getElementById("canvas");
+    	var canvasX = canvas.getBoundingClientRect().left;
+      var canvasY = canvas.getBoundingClientRect().top;
+
+    	var turtle = document.getElementById("turtle");
+      var turtlePos = turtle.getBoundingClientRect();
+      var left =  turtlePos.left;
+      turtle.style.left = (left + move - canvasX) + "px";
+    });
     </script>
   </head>
   <body>
-    <div class="controls" id="main">Controls
-      <div class="button" id = "up" onClick="up()"></div>
+    <div class="controls" id="main">
+      <div class="button" id = "up">Up</div>
+      <div class="button" id = "down">Down</div>
+      <div class="button" id = "left">Left</div>
+      <div class="button" id = "right">Right</div>
     </div>
     <div id="canvas">Canvas
       <div id="turtle"></div>

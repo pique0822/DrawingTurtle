@@ -3,6 +3,19 @@
   <head>
     <title>Drawing Turtle</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+
+  </head>
+  <body>
+    <div class="controls" id="main">
+      <div class="button" id = "up">Up</div>
+      <div class="button" id = "down">Down</div>
+      <div class="button" id = "left">Left</div>
+      <div class="button" id = "right">Right</div>
+    </div>
+    <div id="canvas">Canvas
+      <div id="turtle"></div>
+    </div>
+
     <script>
 
 
@@ -68,18 +81,5 @@
       turtle.style.left = (left + move - canvasX) + "px";
     });}
     </script>
-  </head>
-  <body>
-    <div class="controls" id="main">
-      <div class="button" id = "up">Up</div>
-      <div class="button" id = "down">Down</div>
-      <div class="button" id = "left">Left</div>
-      <div class="button" id = "right">Right</div>
-    </div>
-    <div id="canvas">Canvas
-      <div id="turtle"></div>
-    </div>
-
-
   </body>
 </html>

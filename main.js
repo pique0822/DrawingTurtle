@@ -1,7 +1,14 @@
 var move = 20;
 var yOffset = 18;
-document.getElementById("up").addEventListener('click', function(event){
-  document.getElementById("up").innerHTML = "hello";
+
+var upElem = document.getElementById("up");
+var downElem = document.getElementById("down");
+var leftElem = document.getElementById("left");
+var rightElem = document.getElementById("right");
+
+if(upElem){
+upElem.addEventListener('click', function(event){
+  upElem.innerHTML = "hello";
   var turtle = document.getElementById("canvas");
   var canvasX = canvas.getBoundingClientRect().left;
   var canvasY = canvas.getBoundingClientRect().top;
@@ -10,9 +17,10 @@ document.getElementById("up").addEventListener('click', function(event){
   var turtlePos = turtle.getBoundingClientRect();
   var top =  turtlePos.top;
   turtle.style.top = (top - move - canvasY-yOffset) + "px";
-});
+});}
 
-document.getElementById("down").addEventListener('click', function(event){
+if(downElem){
+downElem.addEventListener('click', function(event){
   var turtle = document.getElementById("canvas");
   var canvasX = canvas.getBoundingClientRect().left;
   var canvasY = canvas.getBoundingClientRect().top;
@@ -21,9 +29,10 @@ document.getElementById("down").addEventListener('click', function(event){
   var turtlePos = turtle.getBoundingClientRect();
   var top =  turtlePos.top;
   turtle.style.top = (top + move - canvasY-yOffset) + "px";
-});
+});}
 
-document.getElementById("left").addEventListener('click', function(event){
+if(leftElem){
+leftElem.addEventListener('click', function(event){
   var turtle = document.getElementById("canvas");
   var canvasX = canvas.getBoundingClientRect().left;
   var canvasY = canvas.getBoundingClientRect().top;
@@ -32,9 +41,10 @@ document.getElementById("left").addEventListener('click', function(event){
   var turtlePos = turtle.getBoundingClientRect();
   var left =  turtlePos.left;
   turtle.style.left = (left - move - canvasX) + "px";
-});
+});}
 
-document.getElementById("right").addEventListener('click', function(event){
+if(rightElem){
+rightElem.addEventListener('click', function(event){
   var turtle = document.getElementById("canvas");
   var canvasX = canvas.getBoundingClientRect().left;
   var canvasY = canvas.getBoundingClientRect().top;
@@ -43,4 +53,4 @@ document.getElementById("right").addEventListener('click', function(event){
   var turtlePos = turtle.getBoundingClientRect();
   var left =  turtlePos.left;
   turtle.style.left = (left + move - canvasX) + "px";
-});
+});}

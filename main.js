@@ -1,3 +1,5 @@
+console.log("all elements have been made");
+
 var move = 20;
 var yOffset = 18;
 
@@ -5,7 +7,7 @@ var upElem = document.getElementById("up");
 var downElem = document.getElementById("down");
 var leftElem = document.getElementById("left");
 var rightElem = document.getElementById("right");
-console.log("all elements have been made");
+
 if(upElem){
 upElem.addEventListener('click', function(event){
   upElem.innerHTML = "hello";

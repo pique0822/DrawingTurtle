@@ -14,7 +14,9 @@
     var leftElem = document.getElementById("left");
     var rightElem = document.getElementById("right");
 
+    console.log("setupelems");
     if(upElem){
+      console.log("upelem");
     upElem.addEventListener('click', function(event){
       upElem.innerHTML = "hello";
       var turtle = document.getElementById("canvas");
@@ -28,6 +30,7 @@
     });}
 
     if(downElem){
+      console.log("down");
     downElem.addEventListener('click', function(event){
       var turtle = document.getElementById("canvas");
       var canvasX = canvas.getBoundingClientRect().left;
@@ -40,6 +43,7 @@
     });}
 
     if(leftElem){
+      console.log("left");
     leftElem.addEventListener('click', function(event){
       var turtle = document.getElementById("canvas");
       var canvasX = canvas.getBoundingClientRect().left;
@@ -52,6 +56,7 @@
     });}
 
     if(rightElem){
+      console.log("right");
     rightElem.addEventListener('click', function(event){
       var turtle = document.getElementById("canvas");
       var canvasX = canvas.getBoundingClientRect().left;

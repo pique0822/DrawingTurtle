@@ -1,4 +1,4 @@
-console.log("all elements have been made");
+window.alert("all elements have been made");
 
 var move = 20;
 var yOffset = 18;
